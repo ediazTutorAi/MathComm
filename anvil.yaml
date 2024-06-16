@@ -43,6 +43,23 @@ db_schema:
     - name: equations
       admin_ui: {width: 200}
       type: string
+  chat_messages:
+    client: full
+    server: full
+    columns:
+    - name: is_latex
+      admin_ui: {width: 200}
+      type: bool
+    - name: message
+      admin_ui: {width: 200}
+      type: string
+    - name: timestamp
+      admin_ui: {width: 200}
+      type: datetime
+    - name: user
+      admin_ui: {width: 200}
+      type: simpleObject
+    title: Table 4
 exported_table_schema:
 - python_name: table_0
   client: full

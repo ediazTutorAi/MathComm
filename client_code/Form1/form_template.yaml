@@ -125,3 +125,8 @@ components:
     name: link_11
     layout_properties: {grid_position: 'FANAAT,MPKQFC'}
     event_bindings: {click: link_11_click}
+  - name: link_12
+    properties: {text: page 12}
+    type: Link
+    layout_properties: {grid_position: 'GNIRZU,TTFAGT'}
+    event_bindings: {click: link_12_click}

@@ -122,6 +122,11 @@ class Form1(Form1Template):
     open_form('Form11')
     pass
 
+  def link_12_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    open_form('Form12')
+    pass
+
 
 
 
