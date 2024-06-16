@@ -1,0 +1,119 @@
+allow_embedding: false
+package_name: Computing_Integrals_001
+db_schema:
+  table_0:
+    title: Table 0
+    client: full
+    server: full
+    columns:
+    - name: steps
+      admin_ui: {width: 200}
+      type: string
+  users:
+    title: Users
+    client: none
+    server: full
+    columns:
+    - name: email
+      admin_ui: {width: 200}
+      type: string
+    - name: enabled
+      admin_ui: {width: 200}
+      type: bool
+    - name: last_login
+      admin_ui: {width: 200}
+      type: datetime
+    - name: password_hash
+      admin_ui: {width: 200}
+      type: string
+    - name: n_password_failures
+      admin_ui: {width: 200}
+      type: number
+    - name: confirmed_email
+      admin_ui: {width: 200}
+      type: bool
+  table_3:
+    client: full
+    server: full
+    columns:
+    - name: texto
+      admin_ui: {order: 0, width: 200}
+      type: string
+    - name: equations
+      admin_ui: {order: 1, width: 200}
+      type: string
+    title: Table 3
+exported_table_schema:
+- python_name: table_0
+  client: full
+  server: full
+  name: Table 0
+  columns:
+    b5Yucomswps=:
+      name: steps
+      type: string
+      admin_ui: {order: 0, width: 200}
+  id: 298792
+- python_name: users
+  client: none
+  server: full
+  name: Users
+  columns:
+    BvqMAmGaNKA=:
+      name: last_login
+      type: datetime
+      admin_ui: {order: 2, width: 200}
+    KWZw57lEZdk=:
+      name: email
+      type: string
+      admin_ui: {order: 0, width: 200}
+    LuIOMxJIirM=:
+      name: n_password_failures
+      type: number
+      admin_ui: {order: 4, width: 200}
+    jvVS7hz9tqM=:
+      name: enabled
+      type: bool
+      admin_ui: {order: 1, width: 200}
+    qw12A+UyWZs=:
+      name: confirmed_email
+      type: bool
+      admin_ui: {order: 5, width: 200}
+    s+n0EnoncgQ=:
+      name: password_hash
+      type: string
+      admin_ui: {order: 3, width: 200}
+  id: 401636
+- python_name: table_3
+  client: full
+  server: full
+  name: Table 3
+  columns:
+    Mc_lC690ieM=:
+      name: equations
+      type: string
+      admin_ui: {order: 1, width: 200}
+    jqfJ4Yuy3aQ=:
+      name: texto
+      type: string
+      admin_ui: {order: 0, width: 200}
+  id: 417549
+name: Computing Integrals 001
+startup_form: Form1
+native_deps:
+  head_html: |-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mathquill@0.10.1-a/build/mathquill.css"/>
+
+    <script src="https://cdn.jsdelivr.net/npm/mathquill@0.10.1-a/build/mathquill.min.js"></script>
+correct_dependency_ids: {}
+uplink_visible: true
+renamed: true
+runtime_options: {version: 2, client_version: '3', server_version: python3-full, server_spec: null}
+metadata: {}
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {}
+- source: /runtime/services/anvil/users.yml
+  client_config: {allow_signup: false, enable_automatically: true, use_email: true, confirm_email: true}
+  server_config: {user_table: users}
