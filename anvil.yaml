@@ -1,5 +1,5 @@
 allow_embedding: false
-package_name: Computing_Integrals_001
+package_name: NewMathChat
 db_schema:
   table_0:
     title: Table 0
@@ -33,16 +33,16 @@ db_schema:
       admin_ui: {width: 200}
       type: bool
   table_3:
+    title: Table 3
     client: full
     server: full
     columns:
     - name: texto
-      admin_ui: {order: 0, width: 200}
+      admin_ui: {width: 200}
       type: string
     - name: equations
-      admin_ui: {order: 1, width: 200}
+      admin_ui: {width: 200}
       type: string
-    title: Table 3
 exported_table_schema:
 - python_name: table_0
   client: full
@@ -98,7 +98,7 @@ exported_table_schema:
       type: string
       admin_ui: {order: 0, width: 200}
   id: 417549
-name: Computing Integrals 001
+name: NewMathChat
 startup_form: Form1
 native_deps:
   head_html: |-
