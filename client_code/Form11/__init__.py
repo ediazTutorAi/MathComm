@@ -22,20 +22,20 @@ class Form11(Form11Template):
     # Any code you write here will run before the form opens.
     
 
-  def button_1_click(self, **event_args):
+  def add_math_click(self, **event_args):
     """This method is called when the button is clicked"""
     math_label=anvil.Label(font_size=20)
     self.linear_panel_1.add_component(math_label)
     self.mq.MathField(anvil.js.get_dom_node(math_label)).focus()
     pass
 
-  def button_2_click(self, **event_args):
+  def add_text_click(self, **event_args):
     """This method is called when the button is clicked"""
     text_box = anvil.TextArea(placeholder="write text here",border=0,height=1, auto_expand=True)
     self.linear_panel_1.add_component(text_box)
     pass
 
-  def button_3_click(self, **event_args):
+  def send_click(self, **event_args):
     """This method is called when the button is clicked"""
     copia = self.linear_panel_1.get_components()
     copia[1].remove_from_parent()
