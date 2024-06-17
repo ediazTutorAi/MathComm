@@ -38,11 +38,12 @@ class Form2(Form2Template):
   def send_click(self, **event_args):
     """This method is called when the button is clicked"""
     copia = self.linear_panel_1.get_components()
+    self.saved_chat.add_component(copia[0])
     pass
 
   def link_1_click(self, **event_args):
     """This method is called when the link is clicked"""
-    open_form('Form1')
+    open_form('Form3')
     pass
 
 

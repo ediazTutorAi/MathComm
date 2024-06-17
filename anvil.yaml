@@ -116,7 +116,7 @@ exported_table_schema:
       admin_ui: {order: 0, width: 200}
   id: 417549
 name: NewMathChat
-startup_form: Form1
+startup_form: null
 native_deps:
   head_html: |-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mathquill@0.10.1-a/build/mathquill.css"/>
@@ -134,3 +134,4 @@ services:
 - source: /runtime/services/anvil/users.yml
   client_config: {allow_signup: false, enable_automatically: true, use_email: true, confirm_email: true}
   server_config: {user_table: users}
+startup: {type: form, module: Form1}
