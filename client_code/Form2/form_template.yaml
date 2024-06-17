@@ -2,86 +2,75 @@ is_package: true
 container:
   type: HtmlTemplate
   properties: {html: '@theme:standard-page.html'}
-  event_bindings: {show: form_show}
 components:
 - type: FlowPanel
   properties: {}
   name: navbar_links
   layout_properties: {slot: nav-right}
-- type: Label
-  properties: {role: null, bold: false, align: left, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: Trying ChatGPT}
-  name: label_1
-  layout_properties: {slot: title}
-- type: ColumnPanel
-  properties: {col_widths: '{}'}
-  name: column_panel_1
+- type: Link
+  properties: {role: null, bold: false, align: center, col_widths: '', spacing_above: small, background: '', icon: '', wrap_on: mobile, underline: false, font: '', col_spacing: medium, icon_align: left, foreground: '', url: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: Page 1}
+  name: link_1
   layout_properties: {slot: left-nav}
-  components:
-  - type: Link
-    properties: {role: null, bold: false, align: left, col_widths: '', spacing_above: small, background: '', icon: '', wrap_on: mobile, underline: false, font: '', col_spacing: medium, icon_align: left, foreground: '', url: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: page1}
-    name: link_1
-    layout_properties: {grid_position: 'ZAXDFV,PZZTGI'}
-    event_bindings: {click: link_1_click}
-  - type: Link
-    properties: {role: null, bold: false, align: left, col_widths: '', spacing_above: small, background: '', icon: '', wrap_on: mobile, underline: false, font: '', col_spacing: medium, icon_align: left, foreground: '', url: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: page2}
-    name: link_2
-    layout_properties: {grid_position: 'CZQOZX,HSMWJA'}
-    event_bindings: {click: link_2_click}
-  - type: Link
-    properties: {role: null, bold: false, align: left, col_widths: '', spacing_above: small, background: '', icon: '', wrap_on: mobile, underline: false, font: '', col_spacing: medium, icon_align: left, foreground: '', url: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: page3}
-    name: link_3
-    layout_properties: {grid_position: 'DVVSDP,YVBWDS'}
-    event_bindings: {click: link_3_click}
+  event_bindings: {click: link_1_click}
 - type: ColumnPanel
-  properties: {col_widths: '{}'}
-  name: column_panel_2
+  properties: {role: null, col_widths: '{}', spacing_above: small, background: '', wrap_on: mobile, col_spacing: medium, foreground: '', spacing_below: small, visible: true, border: '', tooltip: ''}
+  name: column_panel_1
   layout_properties: {slot: default}
   components:
-  - type: Label
-    properties: {role: null, bold: false, align: left, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: 'Find the solution for x of:'}
-    name: label_2
-    layout_properties: {grid_position: 'BKAYHA,JPQFFU JEZFVB,WBLDNX'}
-  - type: Label
-    properties: {role: null, bold: false, align: left, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: '6^{x-3}=5^{x+2}'}
-    name: label_3
-    layout_properties: {grid_position: 'BKAYHA,JPQFFU JEZFVB,WSPSVF'}
-  - type: Spacer
-    properties: {height: 32}
-    name: spacer_1
-    layout_properties: {grid_position: 'BKAYHA,JPQFFU YDWFCZ,HTNYOS'}
-  - type: LinearPanel
-    properties: {spacing_above: small, spacing_below: small, background: 'theme:Gray 200', foreground: '', border: '', visible: true, role: null, tooltip: ''}
-    name: linear_panel_1
-    layout_properties: {grid_position: 'BKAYHA,JPQFFU AVJOOE,IICGTQ'}
-    event_bindings: {show: linear_panel_1_show}
+  - type: ColumnPanel
+    properties: {role: null, col_widths: '', spacing_above: small, background: 'theme:Secondary 500', wrap_on: mobile, col_spacing: medium, foreground: '', spacing_below: small, visible: true, border: solid 1px, tooltip: ''}
+    name: column_panel_3
+    layout_properties: {grid_position: 'TMAJLA,RUWXHP'}
+  - type: ColumnPanel
+    properties: {role: null, col_widths: '{}', spacing_above: small, background: '', wrap_on: mobile, col_spacing: none, foreground: '', spacing_below: small, visible: true, border: '', tooltip: ''}
+    name: column_panel_2
+    layout_properties: {grid_position: 'ZJLOMG,VKBGYM'}
     components:
-    - type: TextBox
-      properties: {role: null, bold: false, align: left, placeholder: Give an idea for next step, spacing_above: small, background: '', type: text, underline: false, font: '', hide_text: false, foreground: '', spacing_below: small, visible: true, border: '', italic: false, enabled: true, font_size: null, tooltip: '', text: ''}
-      name: text_box_1
-      layout_properties: {}
-      event_bindings: {pressed_enter: text_box_1_pressed_enter}
-      data_bindings:
-      - {property: text, code: 'self.item[''eso'']', writeback: true}
+    - type: LinearPanel
+      properties: {spacing_above: small, spacing_below: small, background: '', foreground: '', border: solid 1px, visible: true, role: null, tooltip: ''}
+      name: linear_panel_1
+      layout_properties: {grid_position: 'APTOZM,XDEONE'}
+      components:
+      - type: TextBox
+        properties: {role: null, bold: false, align: left, placeholder: write here, spacing_above: small, background: '', type: text, underline: false, font: '', hide_text: false, foreground: '', spacing_below: small, visible: true, border: '0', italic: false, enabled: true, font_size: null, tooltip: '', text: ''}
+        name: text_box_1
+        layout_properties: {grid_position: 'LQECSQ,HECAVB'}
+        event_bindings: {}
   - type: Button
-    properties: {role: null, bold: false, align: left, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, enabled: true, font_size: null, tooltip: '', text: submit}
-    name: button_1
-    layout_properties: {grid_position: 'BKAYHA,JPQFFU MVNBPV,ZVASBT'}
-    event_bindings: {click: button_1_click}
-  - type: LinearPanel
+    properties: {role: null, bold: false, align: full, spacing_above: small, background: 'theme:Gray 300', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, enabled: true, font_size: null, tooltip: '', text: add math}
+    name: add_math
+    layout_properties: {grid_position: 'XVBVIE,YMPYPX'}
+    event_bindings: {click: add_math_click}
+  - type: Button
+    properties:
+      role: null
+      bold: false
+      align: full
+      spacing_above: small
+      background: theme:Gray 300
+      icon: ''
+      underline: false
+      font: ''
+      icon_align: left
+      foreground: ''
+      spacing_below: small
+      visible: true
+      border: ''
+      italic: false
+      enabled: true
+      font_size: null
+      tooltip: ''
+      text: |
+        add text
+    name: add_text
+    layout_properties: {grid_position: 'XVBVIE,UQBNAF'}
+    event_bindings: {click: add_text_click}
+  - type: Button
+    properties: {role: null, bold: false, align: full, spacing_above: small, background: 'theme:Gray 300', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, enabled: true, font_size: null, tooltip: '', text: send}
+    name: send
+    layout_properties: {grid_position: 'XVBVIE,DAXTTH'}
+    event_bindings: {click: send_click}
+  - type: GridPanel
     properties: {}
-    name: linear_panel_2
-    layout_properties: {grid_position: 'BKAYHA,FLHYNY RRJXZD,YHBJVB'}
-    components:
-    - type: Spacer
-      properties: {visible: true, spacing_above: small, spacing_below: small, height: '90', tooltip: ''}
-      name: spacer_2
-      layout_properties: {}
-  - type: LinearPanel
-    properties: {}
-    name: linear_panel_3
-    layout_properties: {grid_position: 'BKAYHA,FLHYNY JBMQEB,KDEKUW'}
-    components:
-    - type: Label
-      properties: {role: null, bold: false, align: left, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: eso}
-      name: label_4
-      layout_properties: {}
+    name: grid_panel_1
+    layout_properties: {grid_position: 'WMCGJW,BZIJVZ'}
