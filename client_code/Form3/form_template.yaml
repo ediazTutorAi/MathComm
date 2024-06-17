@@ -1,0 +1,35 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:standard-page.html'}
+components:
+- type: ColumnPanel
+  properties: {}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - name: headline_1
+    properties: {role: headline, text: Introduction}
+    type: Label
+    layout_properties: {grid_position: 'ZITAIG,MBTHZJ'}
+  - name: label_1
+    properties: {text: In the next page you can use the chat to communicate with your instructor. For the Mathematical part you can use the typical symbols like e^x or a/b the app will change it to mathematical symbols. This way is easier to communicate with your instructor.}
+    type: Label
+    layout_properties: {grid_position: 'YFPJEY,JRMOOB'}
+  - name: label_2
+    properties: {text: The "add Math" simply add a line where you can introduce mathematics. The "add Text" simply add a line where is only for text.}
+    type: Label
+    layout_properties: {grid_position: 'NBPTZY,FBEFHV'}
+- type: FlowPanel
+  properties: {}
+  name: navbar_links
+  layout_properties: {slot: nav-right}
+- name: link_1
+  properties: {text: Chat}
+  type: Link
+  layout_properties: {slot: left-nav}
+  components:
+  - name: link_2
+    properties: {text: Math Chat}
+    type: Link
+    layout_properties: {grid_position: 'EOWOKF,BHFQJV'}
