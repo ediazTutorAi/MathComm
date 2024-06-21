@@ -45,10 +45,10 @@ class Form2(Form2Template):
 
   def check_type_of_user(self):
     user = anvil.users.get_user()
-    if user['role']=='student':
-      return 'student'
-    else:
+    if user['role']=='instructor':
       return 'instructor'
+    else:
+      return 'student'
     pass
 
   def link_1_click(self, **event_args):
