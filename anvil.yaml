@@ -32,6 +32,9 @@ db_schema:
     - name: confirmed_email
       admin_ui: {width: 200}
       type: bool
+    - name: role
+      admin_ui: {width: 200, order: 6}
+      type: string
   table_3:
     title: Table 3
     client: full
