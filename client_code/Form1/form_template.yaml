@@ -25,12 +25,12 @@ components:
   name: navbar_links
   layout_properties: {slot: nav-right}
 - name: link_1
-  properties: {text: Chat}
+  properties: {text: Chat, align: center}
   type: Link
   layout_properties: {slot: left-nav}
   components:
   - name: link_2
-    properties: {text: Math Chat}
+    properties: {text: Math Chat, align: center}
     type: Link
     layout_properties: {grid_position: 'EOWOKF,BHFQJV'}
     event_bindings: {click: link_2_click}

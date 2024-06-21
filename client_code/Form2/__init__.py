@@ -41,7 +41,6 @@ class Form2(Form2Template):
     """This method is called when the button is clicked"""
     # Get the user type
     user_type = self.check_type_of_user()
-    print(user_type)
 
     # Copy components from linear_panel_1
     components = self.linear_panel_1.get_components()
@@ -51,7 +50,6 @@ class Form2(Form2Template):
 
       # Set the component's background color and alignment based on user type
       if user_type == "instructor":
-        print(user_type)
         new_panel.background = '#BBE9FF' # Light blue background
         component.remove_from_parent()
         component.background = '#BBE9FF'
@@ -59,7 +57,6 @@ class Form2(Form2Template):
         new_panel.add_component(component,full_width_row=True)
         # We need to find a way to align it right
       else:
-        print(user_type)
         new_panel.background = '#FFFED3' # Light blue background
         component.remove_from_parent()
         component.background = '#FFFED3'
