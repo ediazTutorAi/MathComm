@@ -54,6 +54,10 @@ class Form2(Form2Template):
         component.remove_from_parent()
         component.background = '#BBE9FF'
         component.border = "0px"
+        
+        if isinstance(component, Label):
+          print(anvil.js.get_dom_node(component))
+          
         new_panel.add_component(component,full_width_row=True)
         # We need to find a way to align it right
       else:
