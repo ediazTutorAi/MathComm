@@ -51,14 +51,19 @@ class Form2(Form2Template):
 
       # Set the component's background color and alignment based on user type
       if user_type == "instructor":
-        new_panel.background = '#D9EAD3' # Light blue background
+        print(user_type)
+        new_panel.background = '#BBE9FF' # Light blue background
         component.remove_from_parent()
+        component.background = '#BBE9FF'
+        component.border = "0px"
         new_panel.add_component(component,full_width_row=True)
-        # Align right to ColumnPanel
-        new_panel.role = "right-aligned"
+        # We need to find a way to align it right
       else:
-        new_panel.background = 'D5E8D4' # Light blue background
+        print(user_type)
+        new_panel.background = '#FFFED3' # Light blue background
         component.remove_from_parent()
+        component.background = '#FFFED3'
+        component.border = '0px'
         new_panel.add_component(component,full_width_row=True)
         # Align left by default
 
