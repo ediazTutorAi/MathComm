@@ -39,16 +39,42 @@ class Form2(Form2Template):
   # 
   def send_click(self, **event_args):
     """This method is called when the button is clicked"""
-    copia = self.linear_panel_1.get_components()
-    for component in copia:
-      component.remove_from_parent()
-      self.saved_chat.add_component(component)
+    # Get the user type
+    user_type = self.check_type_of_user()
+    print(user_type)
+
+    # Copy components from linear_panel_1
+    components = self.linear_panel_1.get_components()
+    for component in components:
+      # Create a new column panel for the component
+      new_panel = anvil.ColumnPanel()
+
+      # Set the component's background color and alignment based on user type
+      if user_type == "instructor":
+        new_panel.background = '#D9EAD3' # Light blue background
+        component.remove_from_parent()
+        new_panel.add_component(component,full_width_row=True)
+        # Align right to ColumnPanel
+        new_panel.role = "right-aligned"
+      else:
+        new_panel.background = 'D5E8D4' # Light blue background
+        component.remove_from_parent()
+        new_panel.add_component(component,full_width_row=True)
+        # Align left by default
+
+      # Add the new panel to the saved_chat panel
+      self.saved_chat.add_component(new_panel)
+      #component.remove_from_parent()
+      #self.saved_chat.add_component(component)
+
+    # Remove original components from linear_panel_1
+    self.linear_panel_1.clear()
     pass
 
   # this function check the type of user, in this case, it assumes that if is not instructor, it is student
   def check_type_of_user(self):
     user = anvil.users.get_user()
-    if user['role']=='instructor':
+    if user and user['role']=='instructor':
       return 'instructor'
     else:
       return 'student'
