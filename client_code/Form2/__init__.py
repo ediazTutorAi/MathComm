@@ -35,6 +35,8 @@ class Form2(Form2Template):
     self.linear_panel_1.add_component(text_box)
     pass
 
+  # This function receives the command to copy the information in the column panel, so it is saved
+  # 
   def send_click(self, **event_args):
     """This method is called when the button is clicked"""
     copia = self.linear_panel_1.get_components()
@@ -43,6 +45,7 @@ class Form2(Form2Template):
       self.saved_chat.add_component(component)
     pass
 
+  # this function check the type of user, in this case, it assumes that if is not instructor, it is student
   def check_type_of_user(self):
     user = anvil.users.get_user()
     if user['role']=='instructor':
