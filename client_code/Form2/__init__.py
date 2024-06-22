@@ -146,8 +146,15 @@ class Form2(Form2Template):
     """This method is called when the link is clicked"""
     open_form('Form3')
     pass
-  # I need to parse the saved date from the dataTable into the colum panel and
+    
+  # I need to parse the saved data from the dataTable into the colum panel and
   # output all the information.
+  # 1) search the chat data table.
+  # 2) Filter for Label that contains MathQuill.
+  # 3) Filter for TextArea and TextBoxes.
+  # 4) I want to put the name of the user, like user_name wrote this or something like that
+  # 5) Then I want to resuse the column panel to put all this information back in their 
+  # 6) respective components
   
 
 
