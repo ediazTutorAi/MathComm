@@ -20,6 +20,7 @@ class Form2(Form2Template):
     self.mathtexto=self.mq
 
     # Any code you write here will run before the form opens.
+    self.load_components_from_tabe()
     
 
   def add_math_click(self, **event_args):
@@ -54,28 +55,9 @@ class Form2(Form2Template):
         component.remove_from_parent()
         component.background = '#BBE9FF'
         component.border = "0px"
+        # Adding information to the table
+        self.adding_to_table(component,user_type)
 
-        component_data = self.extract_component_data(component)
-        if isinstance(component, Label):
-          app_tables.chat.add_row(
-            type=component_data['type'],
-            content=component_data['content'],
-            mathquill_content=component_data['mathquill_content'],
-            user=user_type
-          )
-        elif isinstance(component,anvil.TextArea):
-          app_tables.chat.add_row(
-            type=component_data['type'],
-            content=component_data['content'],
-            user=user_type
-          )
-        elif isinstance(component,anvil.TextBox):
-          app_tables.chat.add_row(
-            type=component_data['type'],
-            content=component_data['content'],
-            user=user_type
-          )
-          
         new_panel.add_component(component,full_width_row=True)
         # We need to find a way to align it right
       else:
@@ -84,32 +66,13 @@ class Form2(Form2Template):
         component.background = '#FFFED3'
         component.border = '0px'
         new_panel.add_component(component,full_width_row=True)
-        component_data = self.extract_component_data(component)
-        if isinstance(component, Label):
-          app_tables.chat.add_row(
-            type=component_data['type'],
-            content=component_data['content'],
-            mathquill_content=component_data['mathquill_content'],
-            user=user_type
-          )
-        elif isinstance(component,anvil.TextArea):
-          app_tables.chat.add_row(
-            type=component_data['type'],
-            content=component_data['content'],
-            user=user_type
-          )
-        elif isinstance(component,anvil.TextBox):
-          app_tables.chat.add_row(
-            type=component_data['type'],
-            content=component_data['content'],
-            user=user_type
-          )
 
+        # Adding the information to the tabl
+        self.adding_to_table(component,user_type)
+        
       # Add the new panel to the saved_chat panel
       self.saved_chat.add_component(new_panel)
-      #component.remove_from_parent()
-      #self.saved_chat.add_component(component)
-
+      
     # Remove original components from linear_panel_1
     self.linear_panel_1.clear()
     pass
@@ -121,8 +84,7 @@ class Form2(Form2Template):
       return 'instructor'
     else:
       return 'student'
-    pass
-    
+    pass   
   def extract_component_data(self,component):
     if isinstance(component, anvil.Label):
       mathquill_content = self.mq.MathField(anvil.js.get_dom_node(component)).latex()
@@ -141,6 +103,27 @@ class Form2(Form2Template):
         'type': 'TextBox',
         'content': component.text,
       }
+  def adding_to_table(self,component,user_type):
+    component_data = self.extract_component_data(component)
+    if isinstance(component, Label):
+      app_tables.chat.add_row(
+        type=component_data['type'],
+        content=component_data['content'],
+        mathquill_content=component_data['mathquill_content'],
+        user=user_type
+      )
+    elif isinstance(component,anvil.TextArea):
+      app_tables.chat.add_row(
+        type=component_data['type'],
+        content=component_data['content'],
+        user=user_type
+      )
+    elif isinstance(component,anvil.TextBox):
+      app_tables.chat.add_row(
+        type=component_data['type'],
+        content=component_data['content'],
+        user=user_type
+      )
   
   def link_1_click(self, **event_args):
     """This method is called when the link is clicked"""
@@ -155,6 +138,31 @@ class Form2(Form2Template):
   # 4) I want to put the name of the user, like user_name wrote this or something like that
   # 5) Then I want to resuse the column panel to put all this information back in their 
   # 6) respective components
+  def load_components_from_tabe(self):
+    # Query the data table
+    rows = app_tables.chat.search()
+    # Iterate through the retrieved rows
+    for row in rows:
+      component_type = row['type']
+      content = row['content']
+      mathquill_content = row['mathquill_content']
+      user = row['user']
+
+      # Create and add the component based on its type
+      self.create_component(component_type,content,mathquill_content,user)
+
+  def create_component(self,component_type,content,mathquill_content,user):
+    if component_type == 'Label':
+      label = anvil.Label(text=content,font_size=12)
+      if mathquill_content:
+        # Add mathquill content as StaticMath because we don't want to edit it.
+        mathquill_field = self.mq.StaticMath(anvil.js.get_dom_node(label))
+        mathquill_field.latex(mathquill_content)
+
+      self.saved_chat.add_component(label)
+    elif component_type == 'TextArea':
+      text_area = anvil.TextArea(text=content, border=0, height=1, auto_expand=True)
+      self.linear_panel_1.add_component(text_area)
   
 
 
