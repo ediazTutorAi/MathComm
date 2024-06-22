@@ -54,9 +54,14 @@ class Form2(Form2Template):
         component.remove_from_parent()
         component.background = '#BBE9FF'
         component.border = "0px"
-        
+
+        component_data = self.extract_component_data(component)
         if isinstance(component, Label):
-          print(anvil.js.get_dom_node(component))
+          app_tables.chat.add_row(
+            type=component_data['type'],
+            content=component_data['content'],
+            mathquill_content=component_data['mathquill_content']
+          )
           
         new_panel.add_component(component,full_width_row=True)
         # We need to find a way to align it right
@@ -85,7 +90,16 @@ class Form2(Form2Template):
     else:
       return 'student'
     pass
-
+    
+  def extract_component_data(self,component):
+    if isinstance(component, anvil.Label):
+      mathquill_content = component.MathQuill.latext()
+      return {
+        'type': 'Label',
+        'content': component.text,
+        'mathquill_content': mathquill_content
+      }
+  
   def link_1_click(self, **event_args):
     """This method is called when the link is clicked"""
     open_form('Form3')
