@@ -130,11 +130,6 @@ class Form2(Form2Template):
     open_form('Form3')
     pass
     
-  # I need to parse the saved data from the dataTable into the colum panel and
-  # output all the information.
-  # 1) search the chat data table.
-  # 2) Filter for Label that contains MathQuill.
-  # 3) Filter for TextArea and TextBoxes.
   # 4) I want to put the name of the user, like user_name wrote this or something like that
   # 5) Then I want to resuse the column panel to put all this information back in their 
   # 6) respective components
@@ -152,6 +147,11 @@ class Form2(Form2Template):
       self.create_component(component_type,content,mathquill_content,user)
 
   def create_component(self,component_type,content,mathquill_content,user):
+    # Create a label for the user name
+    user_label = anvil.Label(text=user,font_size=12,align="center",background='#3ABEF9',spacing_above='none',spacing_below='none')
+    #Container to hold user label and the original component
+    row_panel = anvil.FlowPanel(background='#A7E6FF',vertical_align='middle',border='solid')
+    row_panel.add_component(user_label)
     if component_type == 'Label':
       label = anvil.Label(text=content,font_size=12)
       if mathquill_content:
@@ -159,15 +159,16 @@ class Form2(Form2Template):
         mathquill_field = self.mq.StaticMath(anvil.js.get_dom_node(label))
         mathquill_field.latex(mathquill_content)
 
-      self.saved_chat.add_component(label)
+      row_panel.add_component(label)
       
     elif component_type == 'TextArea':
       text_area = anvil.Label(text=content, border='0px', font_size=12)
-      self.saved_chat.add_component(text_area)
+      row_panel.add_component(text_area)
     elif component_type == 'TextBox':
       text_box = anvil.Label(text=content, border='0px', font_size=12)
-      self.saved_chat.add_component(text_box)
-  
+      row_panel.add_component(text_box)
+
+    self.saved_chat.add_component(row_panel)
 
 
 
