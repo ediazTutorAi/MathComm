@@ -48,7 +48,7 @@ db_schema:
       type: string
     title: chat_messages
   chat:
-    client: none
+    client: full
     server: full
     columns:
     - name: type

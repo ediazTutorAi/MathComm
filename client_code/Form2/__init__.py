@@ -93,7 +93,7 @@ class Form2(Form2Template):
     
   def extract_component_data(self,component):
     if isinstance(component, anvil.Label):
-      mathquill_content = component.MathQuill.latext()
+      mathquill_content = self.mq.MathField(anvil.js.get_dom_node(component)).latex()
       return {
         'type': 'Label',
         'content': component.text,
