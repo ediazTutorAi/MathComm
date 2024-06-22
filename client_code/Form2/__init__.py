@@ -60,7 +60,14 @@ class Form2(Form2Template):
           app_tables.chat.add_row(
             type=component_data['type'],
             content=component_data['content'],
-            mathquill_content=component_data['mathquill_content']
+            mathquill_content=component_data['mathquill_content'],
+            user=user_type
+          )
+        elif isinstance(component,anvil.TextArea):
+          app_tables.chat.add_row(
+            type=component_data['type'],
+            content=component_data['content'],
+            mathquill_content=None
           )
           
         new_panel.add_component(component,full_width_row=True)
