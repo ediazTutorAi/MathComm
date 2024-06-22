@@ -67,7 +67,13 @@ class Form2(Form2Template):
           app_tables.chat.add_row(
             type=component_data['type'],
             content=component_data['content'],
-            mathquill_content=None
+            user=user_type
+          )
+        elif isinstance(component,anvil.TextBox):
+          app_tables.chat.add_row(
+            type=component_data['type'],
+            content=component_data['content'],
+            user=user_type
           )
           
         new_panel.add_component(component,full_width_row=True)
@@ -78,7 +84,26 @@ class Form2(Form2Template):
         component.background = '#FFFED3'
         component.border = '0px'
         new_panel.add_component(component,full_width_row=True)
-        # Align left by default
+        component_data = self.extract_component_data(component)
+        if isinstance(component, Label):
+          app_tables.chat.add_row(
+            type=component_data['type'],
+            content=component_data['content'],
+            mathquill_content=component_data['mathquill_content'],
+            user=user_type
+          )
+        elif isinstance(component,anvil.TextArea):
+          app_tables.chat.add_row(
+            type=component_data['type'],
+            content=component_data['content'],
+            user=user_type
+          )
+        elif isinstance(component,anvil.TextBox):
+          app_tables.chat.add_row(
+            type=component_data['type'],
+            content=component_data['content'],
+            user=user_type
+          )
 
       # Add the new panel to the saved_chat panel
       self.saved_chat.add_component(new_panel)
@@ -106,12 +131,24 @@ class Form2(Form2Template):
         'content': component.text,
         'mathquill_content': mathquill_content
       }
+    elif isinstance(component, anvil.TextArea):
+      return {
+        'type': 'TextArea',
+        'content': component.text,
+      }
+    elif isinstance(component, anvil.TextBox):
+      return {
+        'type': 'TextBox',
+        'content': component.text,
+      }
   
   def link_1_click(self, **event_args):
     """This method is called when the link is clicked"""
     open_form('Form3')
     pass
-
+  # I need to parse the saved date from the dataTable into the colum panel and
+  # output all the information.
+  
 
 
 
