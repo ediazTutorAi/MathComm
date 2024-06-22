@@ -160,9 +160,13 @@ class Form2(Form2Template):
         mathquill_field.latex(mathquill_content)
 
       self.saved_chat.add_component(label)
+      
     elif component_type == 'TextArea':
-      text_area = anvil.TextArea(text=content, border=0, height=1, auto_expand=True)
-      self.linear_panel_1.add_component(text_area)
+      text_area = anvil.Label(text=content, border='0px', font_size=12)
+      self.saved_chat.add_component(text_area)
+    elif component_type == 'TextBox':
+      text_box = anvil.Label(text=content, border='0px', font_size=12)
+      self.saved_chat.add_component(text_box)
   
 
 
