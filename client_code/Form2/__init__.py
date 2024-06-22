@@ -154,11 +154,11 @@ class Form2(Form2Template):
 
   def create_component(self,component_type,content,mathquill_content,user,email):
     # Create a label for the user name
-    user_label = anvil.Label(text=user,font_size=12,align="center",background='#3ABEF9',spacing_above='none',spacing_below='none',border='rounded 1px')
-    user_email = anvil.Label(text=email,font_size=12,align="center",background='#3ABEF9',spacing_above='none',spacing_below='none',border='solid')
+    user_label = anvil.Label(text=user,font_size=12,align="center",background='#3ABEF9',spacing_above='none',spacing_below='none',border='solid 1px')
+    user_email = anvil.Label(text=email,font_size=12,align="center",background='#3ABEF9',spacing_above='none',spacing_below='none',border='solid 1px')
     
     #Container to hold user label and the original component
-    row_panel = anvil.FlowPanel(background='#A7E6FF',vertical_align='middle',spacing='none')
+    row_panel = anvil.FlowPanel(background='#A7E6FF',vertical_align='middle',spacing='tiny')
     
     # Here we are adding the two labels
     row_panel.add_component(user_label)
