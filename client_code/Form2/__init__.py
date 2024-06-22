@@ -20,7 +20,7 @@ class Form2(Form2Template):
     self.mathtexto=self.mq
 
     # Any code you write here will run before the form opens.
-    self.load_components_from_tabe()
+    self.load_components_from_table()
     
 
   def add_math_click(self, **event_args):
@@ -42,6 +42,7 @@ class Form2(Form2Template):
     """This method is called when the button is clicked"""
     # Get the user type
     user_type = self.check_type_of_user()
+    email = anvil.users.get_user()['email']
     # Copy components from linear_panel_1
     components = self.linear_panel_1.get_components()
     
@@ -56,7 +57,7 @@ class Form2(Form2Template):
         component.background = '#BBE9FF'
         component.border = "0px"
         # Adding information to the table
-        self.adding_to_table(component,user_type)
+        self.adding_to_table(component,user_type,email)
 
         new_panel.add_component(component,full_width_row=True)
         # We need to find a way to align it right
@@ -68,7 +69,7 @@ class Form2(Form2Template):
         new_panel.add_component(component,full_width_row=True)
 
         # Adding the information to the tabl
-        self.adding_to_table(component,user_type)
+        self.adding_to_table(component,user_type,email)
         
       # Add the new panel to the saved_chat panel
       self.saved_chat.add_component(new_panel)
@@ -85,6 +86,7 @@ class Form2(Form2Template):
     else:
       return 'student'
     pass   
+    
   def extract_component_data(self,component):
     if isinstance(component, anvil.Label):
       mathquill_content = self.mq.MathField(anvil.js.get_dom_node(component)).latex()
@@ -103,26 +105,29 @@ class Form2(Form2Template):
         'type': 'TextBox',
         'content': component.text,
       }
-  def adding_to_table(self,component,user_type):
+  def adding_to_table(self,component,user_type,email):
     component_data = self.extract_component_data(component)
     if isinstance(component, Label):
       app_tables.chat.add_row(
         type=component_data['type'],
         content=component_data['content'],
         mathquill_content=component_data['mathquill_content'],
-        user=user_type
+        user=user_type,
+        email=email
       )
     elif isinstance(component,anvil.TextArea):
       app_tables.chat.add_row(
         type=component_data['type'],
         content=component_data['content'],
-        user=user_type
+        user=user_type,
+        email=email
       )
     elif isinstance(component,anvil.TextBox):
       app_tables.chat.add_row(
         type=component_data['type'],
         content=component_data['content'],
-        user=user_type
+        user=user_type,
+        email=email
       )
   
   def link_1_click(self, **event_args):
@@ -133,7 +138,7 @@ class Form2(Form2Template):
   # 4) I want to put the name of the user, like user_name wrote this or something like that
   # 5) Then I want to resuse the column panel to put all this information back in their 
   # 6) respective components
-  def load_components_from_tabe(self):
+  def load_components_from_table(self):
     # Query the data table
     rows = app_tables.chat.search()
     # Iterate through the retrieved rows
@@ -142,16 +147,24 @@ class Form2(Form2Template):
       content = row['content']
       mathquill_content = row['mathquill_content']
       user = row['user']
+      email = row['email']
 
       # Create and add the component based on its type
-      self.create_component(component_type,content,mathquill_content,user)
+      self.create_component(component_type,content,mathquill_content,user,email)
 
-  def create_component(self,component_type,content,mathquill_content,user):
+  def create_component(self,component_type,content,mathquill_content,user,email):
     # Create a label for the user name
-    user_label = anvil.Label(text=user,font_size=12,align="center",background='#3ABEF9',spacing_above='none',spacing_below='none')
+    user_label = anvil.Label(text=user,font_size=12,align="center",background='#3ABEF9',spacing_above='none',spacing_below='none',border='rounded 1px')
+    user_email = anvil.Label(text=email,font_size=12,align="center",background='#3ABEF9',spacing_above='none',spacing_below='none',border='solid')
+    
     #Container to hold user label and the original component
-    row_panel = anvil.FlowPanel(background='#A7E6FF',vertical_align='middle',border='solid')
+    row_panel = anvil.FlowPanel(background='#A7E6FF',vertical_align='middle',spacing='none')
+    
+    # Here we are adding the two labels
     row_panel.add_component(user_label)
+    row_panel.add_component(user_email)
+
+    # going through the components
     if component_type == 'Label':
       label = anvil.Label(text=content,font_size=12)
       if mathquill_content:
