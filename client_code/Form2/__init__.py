@@ -41,9 +41,9 @@ class Form2(Form2Template):
     """This method is called when the button is clicked"""
     # Get the user type
     user_type = self.check_type_of_user()
-
     # Copy components from linear_panel_1
     components = self.linear_panel_1.get_components()
+    
     for component in components:
       # Create a new column panel for the component
       new_panel = anvil.ColumnPanel()
