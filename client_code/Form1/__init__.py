@@ -23,8 +23,9 @@ class Form1(Form1Template):
     anvil.users.login_with_form()
 
   def write_math(self):
-    mathquill_field = self.mq.StaticMath(anvil.js.get_dom_node(self.label_4))
-    mathquill_field.latex('\sum_{k=1}^{\infty}')
+    mathquill_field = self.mq.MathField(anvil.js.get_dom_node(self.label_4))
+    mathquill_field.typedText('x=-b\\pm \\sqrt b^2 -4ac')
+    #mathquill_field.latex('\sum_{k=1}^{\infty}')
     pass
     
   def link_2_click(self, **event_args):
