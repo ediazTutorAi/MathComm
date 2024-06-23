@@ -42,7 +42,7 @@ class Form2(Form2Template):
     """This method is called when the button is clicked"""
     # Get the user type
     user_type = self.check_type_of_user()
-    email = anvil.users.get_user()['email']
+    email = anvil.users.get_user()['email'].split('@')[0]
     # Copy components from linear_panel_1
     components = self.linear_panel_1.get_components()
     
