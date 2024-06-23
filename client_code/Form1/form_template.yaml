@@ -24,22 +24,71 @@ components:
     properties: {text: 'In order to input mathematics you have to click on the "add math" button.  This will show a mathematical input area. In order to input symbols you use the slash "\" and then a shortcut phrase or keyboard key to input the math follow by pushing the space bar to activate the symbol. For example "\sum" creates the symbol:'}
     type: Label
     layout_properties: {grid_position: 'MUCWLL,TTSWJE'}
+  - name: spacer_1
+    properties: {height: 32}
+    type: Spacer
+    layout_properties: {grid_position: 'NRVGXN,ZTJHSX'}
   - name: label_4
     properties: {align: center}
     type: Label
     layout_properties: {grid_position: 'NRVGXN,BAXCTB'}
+  - name: spacer_2
+    properties: {height: 32}
+    type: Spacer
+    layout_properties: {grid_position: 'NRVGXN,BQTUVE'}
+  - name: label_5
+    properties: {text: 'If you want to add the bounds you have to just use the arrows to move up or down the symbol to put the limits, if you need to put the infinity symbol just use the keyword "infty" with a slash at the beginning to tell that is a math symbol, finish with a spacebar push.'}
+    type: Label
+    layout_properties: {grid_position: 'OOJRIE,VKMCVV'}
+  - name: spacer_3
+    properties: {height: 32}
+    type: Spacer
+    layout_properties: {grid_position: 'QXNZYJ,DCDRSM'}
+  - name: label_6
+    properties: {}
+    type: Label
+    layout_properties: {grid_position: 'QXNZYJ,UUFWVK'}
+  - name: spacer_4
+    properties: {height: 32}
+    type: Spacer
+    layout_properties: {grid_position: 'QXNZYJ,WZKCCC'}
+  - name: label_7
+    properties: {text: 'In order to put the argument, just use the right arrow to go to the middle of the sum symbol and put the sequence, like "1/k^2". You should get something like:'}
+    type: Label
+    layout_properties: {grid_position: 'WHPSRX,YSFIYP'}
+  - name: spacer_5
+    properties: {height: 32}
+    type: Spacer
+    layout_properties: {grid_position: 'ATDNLO,OQFZSK'}
+  - name: label_8
+    properties: {}
+    type: Label
+    layout_properties: {grid_position: 'ATDNLO,OINBZJ'}
+  - name: spacer_6
+    properties: {height: 32}
+    type: Spacer
+    layout_properties: {grid_position: 'ATDNLO,PPVTGI'}
 - type: FlowPanel
   properties: {}
   name: navbar_links
   layout_properties: {slot: nav-right}
-- name: link_1
-  properties: {text: Chat, align: center}
-  type: Link
+- name: column_panel_1
+  properties: {}
+  type: ColumnPanel
   layout_properties: {slot: left-nav}
   components:
-  - name: link_2
-    properties: {text: Math Chat, align: center}
+  - name: link_1
+    properties: {text: How to}
     type: Link
-    layout_properties: {grid_position: 'EOWOKF,BHFQJV'}
+    layout_properties: {grid_position: 'XOLDTV,GXLODE'}
+    event_bindings: {click: link_1_click}
+  - name: link_2
+    properties: {text: Math Chat}
+    type: Link
+    layout_properties: {grid_position: 'QYRDSI,IEHEJD'}
     event_bindings: {click: link_2_click}
-  event_bindings: {click: link_1_click}
+  - name: link_3
+    properties: {text: Symbols Commands}
+    type: Link
+    layout_properties: {grid_position: 'VKXBTG,JKKRVT'}
+    event_bindings: {click: link_3_click}

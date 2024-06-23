@@ -132,7 +132,7 @@ class Form2(Form2Template):
   
   def link_1_click(self, **event_args):
     """This method is called when the link is clicked"""
-    open_form('Form3')
+    open_form('Form1')
     pass
     
   # 4) I want to put the name of the user, like user_name wrote this or something like that
@@ -182,6 +182,16 @@ class Form2(Form2Template):
       row_panel.add_component(text_box)
 
     self.saved_chat.add_component(row_panel)
+
+  def link_2_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    open_form('Form2')
+    pass
+
+  def link_3_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    open_form('Form3')
+    pass
 
 
 
