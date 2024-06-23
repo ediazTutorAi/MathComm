@@ -30,23 +30,6 @@ db_schema:
     - name: remembered_logins
       admin_ui: {order: 7, width: 200}
       type: simpleObject
-  chat_messages:
-    client: full
-    server: full
-    columns:
-    - name: is_latex
-      admin_ui: {width: 200}
-      type: bool
-    - name: message
-      admin_ui: {width: 200}
-      type: string
-    - name: timestamp
-      admin_ui: {width: 200}
-      type: datetime
-    - name: user
-      admin_ui: {order: 0, width: 200}
-      type: string
-    title: chat_messages
   chat:
     client: full
     server: full

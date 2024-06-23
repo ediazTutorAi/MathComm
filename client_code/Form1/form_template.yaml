@@ -9,17 +9,25 @@ components:
   layout_properties: {slot: default}
   components:
   - name: headline_1
-    properties: {role: headline, text: Introduction}
+    properties: {role: headline, text: How to use the Math Chat}
     type: Label
     layout_properties: {grid_position: 'ZITAIG,MBTHZJ'}
   - name: label_1
-    properties: {text: In the next page you can use the chat to communicate with your instructor. For the Mathematical part you can use the typical symbols like e^x or a/b the app will change it to mathematical symbols. This way is easier to communicate with your instructor.}
+    properties: {text: 'The idea is to use the math chat to communicate with your instructor about mathematical questions or issues you want to understand more. You can also pose problems that you are trying but you are stuck, etc.'}
     type: Label
     layout_properties: {grid_position: 'YFPJEY,JRMOOB'}
   - name: label_2
-    properties: {text: The "add Math" simply add a line where you can introduce mathematics. The "add Text" simply add a line where is only for text.}
+    properties: {text: The idea is to write down an idea by using the text and then complement that by adding a mathematical equation that represents your idea or problem.}
     type: Label
     layout_properties: {grid_position: 'NBPTZY,FBEFHV'}
+  - name: label_3
+    properties: {text: 'In order to input mathematics you have to click on the "add math" button.  This will show a mathematical input area. In order to input symbols you use the slash "\" and then a shortcut phrase or keyboard key to input the math follow by pushing the space bar to activate the symbol. For example "\sum" creates the symbol:'}
+    type: Label
+    layout_properties: {grid_position: 'MUCWLL,TTSWJE'}
+  - name: label_4
+    properties: {align: center}
+    type: Label
+    layout_properties: {grid_position: 'NRVGXN,BAXCTB'}
 - type: FlowPanel
   properties: {}
   name: navbar_links
