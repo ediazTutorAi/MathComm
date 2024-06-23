@@ -71,7 +71,3 @@ components:
     name: send
     layout_properties: {grid_position: 'XVBVIE,DAXTTH'}
     event_bindings: {click: send_click}
-  - type: GridPanel
-    properties: {}
-    name: grid_panel_1
-    layout_properties: {grid_position: 'WMCGJW,BZIJVZ'}
