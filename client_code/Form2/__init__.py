@@ -76,6 +76,7 @@ class Form2(Form2Template):
       
     # Remove original components from linear_panel_1
     self.linear_panel_1.clear()
+    self.load_components_from_table()
     pass
 
   # this function check the type of user, in this case, it assumes that if is not instructor, it is student
@@ -137,6 +138,8 @@ class Form2(Form2Template):
     
 
   def load_components_from_table(self):
+    #clean the column panel first
+    self.saved_chat.clear()
     # Query the data table
     rows = app_tables.chat.search()
     # Iterate through the retrieved rows
