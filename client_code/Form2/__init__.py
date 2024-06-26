@@ -15,12 +15,21 @@ class Form2(Form2Template):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
 
+    # Set up refresh chat callback
+    anvil.server.call_s('refresh_chat',self.refresh_chat)
+
     # defining mq.MathQuill and mathtexto, maybe we need to change the words
     self.mq = MathQuill.getInterface(2)
     self.mathtexto=self.mq
 
     # Any code you write here will run before the form opens.
     self.load_components_from_table()
+
+  def refresh_chat(self):
+    #Clear the chat and reload components
+    self.saved_chat.clear()
+    self.load_components_from_table()
+    Notification('Chat refresh with new messages',timeout=1).show()
     
 
   def add_math_click(self, **event_args):
@@ -76,6 +85,9 @@ class Form2(Form2Template):
       
     # Remove original components from linear_panel_1
     self.linear_panel_1.clear()
+
+    #  Notify the server to refresh chat for all clients
+    anvil.server.call('refresh_chat_for_all_clients')
     pass
 
   # this function check the type of user, in this case, it assumes that if is not instructor, it is student

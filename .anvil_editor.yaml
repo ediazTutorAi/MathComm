@@ -4,7 +4,8 @@ unique_ids:
     Form2: '1695517357434441296105430.2557'
     Form3: '1719176229104822474318260.2932'
   modules: {}
-  server_modules: {}
+  server_modules:
+    ServerModule1: '1719414083790695162043446.0116'
   assets:
     mathquill.css: '1657340981949223591559561.2703'
     standard-page.html: CRGJHQVQ373G36ZHU4WOCZSZR6LMRCJK
