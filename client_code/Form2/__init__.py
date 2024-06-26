@@ -11,8 +11,6 @@ from anvil.js.window import MathQuill
 from anvil.js.window import jQuery
 
 class Form2(Form2Template):
-  def update_chats(self):
-    self.saved_chat.
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
