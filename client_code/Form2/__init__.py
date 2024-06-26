@@ -135,9 +135,7 @@ class Form2(Form2Template):
     open_form('Form1')
     pass
     
-  # 4) I want to put the name of the user, like user_name wrote this or something like that
-  # 5) Then I want to resuse the column panel to put all this information back in their 
-  # 6) respective components
+
   def load_components_from_table(self):
     # Query the data table
     rows = app_tables.chat.search()
