@@ -16,11 +16,3 @@ import anvil.server
 #   print("Hello, " + name + "!")
 #   return 42
 #
-@anvil.tables.on_add('chat')
-def notify_clients_on_new_message(table,row):
-  anvil.server.call('refresh_chat_for_all_clients')
-
-@anvil.server.callable
-def refresh_chat_for_all_clients():
-  anvil.server.call_s('refresh_chat_for_all_clients')
-

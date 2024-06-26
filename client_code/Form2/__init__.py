@@ -15,8 +15,7 @@ class Form2(Form2Template):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
 
-    # Set up refresh chat callback
-    anvil.server.call_s('refresh_chat',self.refresh_chat)
+
 
     # defining mq.MathQuill and mathtexto, maybe we need to change the words
     self.mq = MathQuill.getInterface(2)
@@ -25,12 +24,7 @@ class Form2(Form2Template):
     # Any code you write here will run before the form opens.
     self.load_components_from_table()
 
-  def refresh_chat(self):
-    #Clear the chat and reload components
-    self.saved_chat.clear()
-    self.load_components_from_table()
-    Notification('Chat refresh with new messages',timeout=1).show()
-    
+
 
   def add_math_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -86,8 +80,7 @@ class Form2(Form2Template):
     # Remove original components from linear_panel_1
     self.linear_panel_1.clear()
 
-    #  Notify the server to refresh chat for all clients
-    anvil.server.call('refresh_chat_for_all_clients')
+
     pass
 
   # this function check the type of user, in this case, it assumes that if is not instructor, it is student
@@ -147,9 +140,6 @@ class Form2(Form2Template):
     open_form('Form1')
     pass
     
-  # 4) I want to put the name of the user, like user_name wrote this or something like that
-  # 5) Then I want to resuse the column panel to put all this information back in their 
-  # 6) respective components
   def load_components_from_table(self):
     # Query the data table
     rows = app_tables.chat.search()
