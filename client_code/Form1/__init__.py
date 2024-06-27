@@ -23,10 +23,9 @@ class Form1(Form1Template):
     anvil.users.login_with_form()
 
   def write_math(self):
-    mathquill_field = self.mq.StaticMath(anvil.js.get_dom_node(self.link_2))
+    self.mq.MathField(anvil.js.get_dom_node(self.label_4)).focus()
     # In order for this to render properly I had to use double \\ in front of the fraction frac command
-    # I didn't need to use it in other places, weird.
-    mathquill_field2.latex('\sum_{k=1}^{\infty} \\frac{1}{k^2}')
+    # I didn't need to use it in other places, weird. \\frac{}{} if I want to write from code
     pass
     
   def link_2_click(self, **event_args):
