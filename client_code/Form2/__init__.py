@@ -195,5 +195,11 @@ class Form2(Form2Template):
     open_form('Form3')
     pass
 
+  def form_show(self, **event_args):
+    """This method is called when the form is shown on the page"""
+    self.send.scroll_into_view(smooth=True)
+    pass
+
+
 
 
