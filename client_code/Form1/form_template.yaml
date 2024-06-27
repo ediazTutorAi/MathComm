@@ -21,7 +21,7 @@ components:
     type: Label
     layout_properties: {grid_position: 'KKCZRO,RLTTMB'}
   - name: label_3
-    properties: {text: 'For example if you enter: '}
+    properties: {text: 'For example if you enter: \sum ↓ k=1 ↑ or TAB \infty SPACE 1/k^2 you will get:'}
     type: Label
     layout_properties: {grid_position: 'AWPVMD,QJFEXL'}
 - type: FlowPanel
