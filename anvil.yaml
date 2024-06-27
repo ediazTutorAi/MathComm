@@ -111,10 +111,11 @@ exported_table_schema:
 name: NewMathChat
 startup_form: null
 native_deps:
-  head_html: |-
+  head_html: |+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mathquill@0.10.1-a/build/mathquill.css"/>
 
     <script src="https://cdn.jsdelivr.net/npm/mathquill@0.10.1-a/build/mathquill.min.js"></script>
+
 correct_dependency_ids: {}
 uplink_visible: true
 renamed: true
