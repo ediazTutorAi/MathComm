@@ -48,6 +48,14 @@ components:
     properties: {spacing_above: large, spacing_below: large}
     type: Label
     layout_properties: {grid_position: 'RDIPIE,DRDXUH'}
+  - name: label_11
+    properties: {text: If you type  / it should give you a fraction, align: right, spacing_above: large, spacing_below: large}
+    type: Label
+    layout_properties: {grid_position: 'KZXAGW,YAMDOB'}
+  - name: label_12
+    properties: {spacing_above: large, spacing_below: large}
+    type: Label
+    layout_properties: {grid_position: 'KZXAGW,KPCQWD'}
 - type: FlowPanel
   properties: {}
   name: navbar_links
