@@ -49,31 +49,13 @@ class Form2(Form2Template):
     for component in components:
       # Create a new column panel for the component
       new_panel = anvil.ColumnPanel()
-
-      # Set the component's background color and alignment based on user type
-      if user_type == "instructor":
-        new_panel.background = '#BBE9FF' # Light blue background
-        component.remove_from_parent()
-        component.background = '#BBE9FF'
-        component.border = "0px"
-        # Adding information to the table
-        self.adding_to_table(component,user_type,email)
-
-        new_panel.add_component(component,full_width_row=True)
-        # We need to find a way to align it right
-      else:
-        new_panel.background = '#FFFED3' # Light blue background
-        component.remove_from_parent()
-        component.background = '#FFFED3'
-        component.border = '0px'
-        new_panel.add_component(component,full_width_row=True)
-
-        # Adding the information to the tabl
-        self.adding_to_table(component,user_type,email)
-        
+      component.remove_from_parent()
+      component.border = "0px"
+      # Adding information to the table
+      self.adding_to_table(component,user_type,email)
+      new_panel.add_component(component,full_width_row=True)
       # Add the new panel to the saved_chat panel
-      self.saved_chat.add_component(new_panel)
-      
+      self.saved_chat.add_component(new_panel)      
     # Remove original components from linear_panel_1
     self.linear_panel_1.clear()
     self.load_components_from_table()
@@ -155,16 +137,24 @@ class Form2(Form2Template):
       self.create_component(component_type,content,mathquill_content,user,email)
 
   def create_component(self,component_type,content,mathquill_content,user,email):
-    # Create a label for the user name
-    user_label = anvil.Label(text=user,font_size=12,align="center",background='#3ABEF9',spacing_above='none',spacing_below='none',border='solid 1px')
-    user_email = anvil.Label(text=email,font_size=12,align="center",background='#3ABEF9',spacing_above='none',spacing_below='none',border='solid 1px')
-    
-    #Container to hold user label and the original component
-    row_panel = anvil.FlowPanel(background='#A7E6FF',vertical_align='middle',spacing='tiny')
-    
-    # Here we are adding the two labels
-    row_panel.add_component(user_label)
-    row_panel.add_component(user_email)
+    if user=='instructor':
+      # Create a label for the user name
+      user_label = anvil.Label(text=user,font_size=12,align="center",background='#E9C46A',spacing_above='none',spacing_below='none',border='solid 1px')
+      user_email = anvil.Label(text=email,font_size=12,align="center",background='#E9C46A',spacing_above='none',spacing_below='none',border='solid 1px')
+      #Container to hold user label and the original component
+      row_panel = anvil.FlowPanel(background='#A7E6FF',vertical_align='middle',spacing='tiny')
+      # Here we are adding the two labels
+      row_panel.add_component(user_label)
+      row_panel.add_component(user_email)
+    elif user == 'student':
+      # Create a label for the user name
+      user_label = anvil.Label(text=user,font_size=12,align="center",background='#ADD899',spacing_above='none',spacing_below='none',border='solid 1px')
+      user_email = anvil.Label(text=email,font_size=12,align="center",background='#ADD899',spacing_above='none',spacing_below='none',border='solid 1px')
+      #Container to hold user label and the original component
+      row_panel = anvil.FlowPanel(background='#D8EFD3',vertical_align='middle',spacing='tiny')
+      # Here we are adding the two labels
+      row_panel.add_component(user_label)
+      row_panel.add_component(user_email)
 
     # going through the components
     if component_type == 'Label':
