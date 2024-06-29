@@ -68,7 +68,12 @@ components:
     layout_properties: {grid_position: 'XVBVIE,DAXTTH'}
     event_bindings: {click: send_click, show: send_show}
   - name: rt_1
-    properties: {content: ' Type **\sum** to get {label_1}; Type **\int** to get {label_2}; Type **\sqrt** to get {label_3} ; Type **\infty** to get {label_4}; Type **k^6** to get {label_5}; Type **/** to get a fraction {label_6}'}
+    properties:
+      content: |
+        |Type|you get|Type|you get|Type| you get|
+        |:---:|:---|:---:|:---|:---:|:---|
+        |**\infty**|{label_4}|**\sqrt**|{label_3}|**\sum**|{label_1}|
+        |**\int**|{label_2}|**a/b**|{label_6}|**a^b**|{label_5}|
     type: RichText
     layout_properties: {grid_position: 'UEJNOZ,FMHIPW'}
     components:
@@ -84,25 +89,13 @@ components:
       properties: {}
       type: Label
       layout_properties: {slot: label_3}
-  - name: data_grid_1
-    properties:
-      columns:
-      - {id: JKSDUP, title: Column 1, data_key: column_1}
-      - {id: VJQQOR, title: Column 2, data_key: column_2}
-      - {id: OJLQEN, title: Column 3, data_key: column_3}
-    type: DataGrid
-    components:
-    - name: repeating_panel_1
-      properties: {item_template: Form2.RowTemplate2}
-      type: RepeatingPanel
-    layout_properties: {grid_position: 'QSAFTH,CORVSC'}
 - name: column_panel_3
   properties: {}
   type: ColumnPanel
   layout_properties: {slot: left-nav}
   components:
   - name: link_1
-    properties: {text: How To}
+    properties: {text: Instructions}
     type: Link
     layout_properties: {grid_position: 'RVGUYM,HTPJMZ'}
     event_bindings: {click: link_1_click}

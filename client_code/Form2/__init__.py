@@ -208,16 +208,17 @@ class Form2(Form2Template):
     mathquill4.latex(labelInfty.text)
     self.rt_1.add_component(labelInfty,slot="label_4")
     # Next slot
-    labelPower=anvil.Label(text="k^6")
+    labelPower=anvil.Label(text="a^b")
     mathquill5=self.mq.StaticMath(anvil.js.get_dom_node(labelPower))
     mathquill5.latex(labelPower.text)
     self.rt_1.add_component(labelPower,slot="label_5")
     #Next slot
-    labelFrac=anvil.Label(text="\\frac{1}{k}")
+    labelFrac=anvil.Label(text="\\frac{a}{b}")
     mathquill6=self.mq.StaticMath(anvil.js.get_dom_node(labelFrac))
     mathquill6.latex(labelFrac.text)
     self.rt_1.add_component(labelFrac,slot="label_6")
 
+    
     #Scrolling smooth
     self.send.scroll_into_view(smooth=True)
     
