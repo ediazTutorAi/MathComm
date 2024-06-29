@@ -20,8 +20,7 @@ class Form2(Form2Template):
     self.mathtexto=self.mq
 
     # Any code you write here will run before the form opens.
-    self.load_components_from_table()
-    
+    self.load_components_from_table()    
 
   def add_math_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -69,8 +68,7 @@ class Form2(Form2Template):
       return 'instructor'
     else:
       return 'student'
-    pass   
-    
+    pass     
   def extract_component_data(self,component):
     if isinstance(component, anvil.Label):
       mathquill_content = self.mq.MathField(anvil.js.get_dom_node(component)).latex()
@@ -140,12 +138,12 @@ class Form2(Form2Template):
     if user=='instructor':
       # Create a label for the user name
       user_label = anvil.Label(text=user,font_size=12,align="center",background='#E9C46A',spacing_above='none',spacing_below='none',border='solid 1px')
-      user_email = anvil.Label(text=email,font_size=12,align="center",background='#E9C46A',spacing_above='none',spacing_below='none',border='solid 1px')
+      #user_email = anvil.Label(text=email,font_size=12,align="center",background='#E9C46A',spacing_above='none',spacing_below='none',border='solid 1px')
       #Container to hold user label and the original component
       row_panel = anvil.FlowPanel(background='#A7E6FF',vertical_align='middle',spacing='tiny')
       # Here we are adding the two labels
       row_panel.add_component(user_label)
-      row_panel.add_component(user_email)
+      #row_panel.add_component(user_email)
     elif user == 'student':
       # Create a label for the user name
       user_label = anvil.Label(text=user,font_size=12,align="center",background='#ADD899',spacing_above='none',spacing_below='none',border='solid 1px')

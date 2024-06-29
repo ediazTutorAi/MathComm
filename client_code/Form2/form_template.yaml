@@ -34,7 +34,7 @@ components:
         layout_properties: {grid_position: 'LQECSQ,HECAVB'}
         event_bindings: {}
   - name: label_4
-    properties: {text: 'Click the "Add Text" button to add your ideas or questions, and when you need to input mathematical symbols use the "Add Math " button. Once you finish, send your information by clicking in the "Send or update" button. Your instructor will try to answer your questions daily but not in real time.'}
+    properties: {text: Click "Add Text" only for Text. Clic  "Add Math " only for math symbols. Click "Send or update" to send the information to your instructor.}
     type: Label
     layout_properties: {grid_position: 'ZYKAJK,ZXUSXI'}
   - type: Button
