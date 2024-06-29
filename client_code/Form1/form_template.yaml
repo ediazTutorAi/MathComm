@@ -29,6 +29,10 @@ components:
     properties: {height: 32}
     type: Spacer
     layout_properties: {grid_position: 'CMOXHA,OOJGWM'}
+  - name: spacer_3
+    properties: {height: 32}
+    type: Spacer
+    layout_properties: {grid_position: 'CMOXHA,NITEJM'}
   - name: label_4
     properties: {align: center, background: '#CAF4FF'}
     type: Label
