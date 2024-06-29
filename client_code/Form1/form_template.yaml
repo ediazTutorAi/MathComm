@@ -11,20 +11,15 @@ components:
   - name: rich_text_1
     properties:
       content: |-
-        ### How to use the Math Chat
-        The idea is to use the math chat to communicate with your instructor about mathematical questions from your Course. This chat is not privately and it is not part of the University of Texas at Arlington, use as if where like office hours.
-        ___
-        To enter mathematics just enter simple combination of keys from your keyboard. For example try to enter the next symbols in the next math input.
+        The Math Chat is designed for communicating with your instructor about mathematical questions from your course. This chat is not private and is not affiliated with the University of Texas at Arlington; use it as you would during office hours.
+
+        To enter mathematical expressions, use simple key combinations on your keyboard. Try typing the following symbols into the light blue box below.
     type: RichText
     layout_properties: {grid_position: 'NEXVBZ,TQFKNA'}
   - name: rich_text_3
-    properties: {content: '(Click in the Box to activate it, then write ) \sum SPACE k=1 ARROWUP or TAB \infty SPACE ARROWRIGHT  1/k^2 ', align: center}
+    properties: {content: '(Click in the Box below to activate it, then type ) \sum SPACE k=1 ARROW-UP or TAB \infty SPACE ARROW-RIGHT  1/k^2 ', align: center}
     type: RichText
     layout_properties: {grid_position: 'GXNZHV,LFSOMW'}
-  - name: label_5
-    properties: {text: 'Where ARROWUP or ARROWRIGHT are the arrows keys in your keyboard, SPACE is the space bar, and TAB is the tab key in your keyboard.'}
-    type: Label
-    layout_properties: {grid_position: 'FJXWOL,HCUROO'}
   - name: spacer_1
     properties: {height: 32}
     type: Spacer
@@ -48,10 +43,11 @@ components:
   - name: rich_text_2
     properties:
       content: |-
-        <h4>Warning<h4/>
-        <p>This app is a system provided by your instructor as it is. It is not affiliated to The University of Texas at Arlington. Use it as if you would with your office hours</p>
+        <h4>Warning</h4>
+        <p>This app is provided by your instructor as is. It is not affiliated with The University of Texas at Arlington. Use it as you would during office hours.</p>
+        <p>Note: This is a work in progress, not a finished product.</p>
       format: restricted_html
-      border: solid 0.5 px
+      border: ''
       background: theme:Gray 200
       align: left
       font_size: 8
