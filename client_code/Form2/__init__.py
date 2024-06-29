@@ -187,7 +187,40 @@ class Form2(Form2Template):
 
   def form_show(self, **event_args):
     """This method is called when the form is shown on the page"""
+    # The next code needs to be change for better readability
+    labelSum=anvil.Label(text="\\sum")
+    mathquill1=self.mq.StaticMath(anvil.js.get_dom_node(labelSum))
+    mathquill1.latex(labelSum.text)
+    self.rt_1.add_component(labelSum,slot="label_1")
+    # Next slot
+    labelInt=anvil.Label(text="\\int")
+    mathquill2=self.mq.StaticMath(anvil.js.get_dom_node(labelInt))
+    mathquill2.latex(labelInt.text)
+    self.rt_1.add_component(labelInt,slot="label_2")
+    # Next slot
+    labelSqrt=anvil.Label(text="\\sqrt{}")
+    mathquill3=self.mq.StaticMath(anvil.js.get_dom_node(labelSqrt))
+    mathquill3.latex(labelSqrt.text)
+    self.rt_1.add_component(labelSqrt,slot="label_3")
+    # Next slot
+    labelInfty=anvil.Label(text="\\infty")
+    mathquill4=self.mq.StaticMath(anvil.js.get_dom_node(labelInfty))
+    mathquill4.latex(labelInfty.text)
+    self.rt_1.add_component(labelInfty,slot="label_4")
+    # Next slot
+    labelPower=anvil.Label(text="k^6")
+    mathquill5=self.mq.StaticMath(anvil.js.get_dom_node(labelPower))
+    mathquill5.latex(labelPower.text)
+    self.rt_1.add_component(labelPower,slot="label_5")
+    #Next slot
+    labelFrac=anvil.Label(text="\\frac{1}{k}")
+    mathquill6=self.mq.StaticMath(anvil.js.get_dom_node(labelFrac))
+    mathquill6.latex(labelFrac.text)
+    self.rt_1.add_component(labelFrac,slot="label_6")
+
+    #Scrolling smooth
     self.send.scroll_into_view(smooth=True)
+    
     pass
 
 

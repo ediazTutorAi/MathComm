@@ -44,7 +44,7 @@ components:
     properties:
       content: |-
         <h4>Warning</h4>
-        <p>This app is provided by your instructor as is. It is not affiliated with The University of Texas at Arlington. Use it as you would during office hours.</p>
+        <h5>This app is provided by your instructor as is. It is not affiliated with The University of Texas at Arlington. Use it as you would during office hours.</p>
         <p>Note: This is a work in progress, not a finished product.</p>
       format: restricted_html
       border: ''
@@ -63,7 +63,7 @@ components:
   layout_properties: {slot: left-nav}
   components:
   - name: link_1
-    properties: {text: How to}
+    properties: {text: Instructions}
     type: Link
     layout_properties: {grid_position: 'XOLDTV,GXLODE'}
     event_bindings: {click: link_1_click}
