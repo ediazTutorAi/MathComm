@@ -216,7 +216,6 @@ class Form2(Form2Template):
     mathquill6.latex(labelFrac.text)
     self.rt_1.add_component(labelFrac,slot="label_6")
 
-    
     #Scrolling smooth
     self.send.scroll_into_view(smooth=True)
     
