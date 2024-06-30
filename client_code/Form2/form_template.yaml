@@ -115,3 +115,7 @@ components:
     type: Link
     layout_properties: {grid_position: 'DUBJHK,JZZPTM'}
     event_bindings: {click: link_3_click}
+- name: label_5
+  properties: {text: Math Discussion Board}
+  type: Label
+  layout_properties: {slot: title}

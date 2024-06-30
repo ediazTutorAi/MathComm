@@ -11,13 +11,13 @@ components:
   - name: rich_text_1
     properties:
       content: |-
-        The Math Chat is designed for communicating with your instructor about mathematical questions from your course. This chat is not private and is not affiliated with the University of Texas at Arlington; use it as you would during office hours.
+        This **Math Discussion Board** is designed for communicating with your instructor about mathematical questions from your course. This chat is not private and is not affiliated with the University of Texas at Arlington; use it as you would during office hours.
 
-        To enter mathematical expressions, use simple key combinations on your keyboard. The backslash (\\) is used to activate many functions, like integrals and sumations, square roots, etc. Try typing the following symbols into the light blue box below.
+        To enter mathematical expressions, use simple key combinations in your keyboard. The backslash (\\) is used to activate many functions, like integrals and summations, square roots, etc. Try typing the following symbols into the light blue box below, click on it to activate it.
     type: RichText
     layout_properties: {grid_position: 'NEXVBZ,TQFKNA'}
   - name: rich_text_3
-    properties: {content: '(Click in the Box below to activate it, then type exactly ) \sum SPACE k=1 ARROW-UP or TAB \infty SPACE ARROW-RIGHT  1/k^2 ', align: center}
+    properties: {content: '\sum SPACE k=1 ARROW-UP or TAB \infty SPACE ARROW-RIGHT  1/k^2 ', align: center}
     type: RichText
     layout_properties: {grid_position: 'GXNZHV,LFSOMW'}
   - name: spacer_1
@@ -29,7 +29,7 @@ components:
     type: Spacer
     layout_properties: {grid_position: 'CMOXHA,NITEJM'}
   - name: label_4
-    properties: {align: center, background: '#CAF4FF'}
+    properties: {align: left, background: '#CAF4FF'}
     type: Label
     layout_properties: {grid_position: 'CMOXHA,HHUSCW'}
   - name: spacer_2
@@ -43,14 +43,13 @@ components:
   - name: rich_text_2
     properties:
       content: |-
-        <h4>Warning</h4>
-        <h5>This app is provided by your instructor as is. It is not affiliated with The University of Texas at Arlington. Use it as you would during office hours.</p>
-        <p>Note: This is a work in progress, not a finished product.</p>
-      format: restricted_html
+        **Warning** This app is provided by your instructor as it is. It is not meant to be use by a smartphone. It is not affiliated with The University of Texas at Arlington. Use it as you would during office hours.
+        **Note** This is a work in progress, not a finished product. Changes will not be announced.
+      format: markdown
       border: ''
       background: theme:Gray 200
       align: left
-      font_size: 8
+      font_size: null
     type: RichText
     layout_properties: {grid_position: 'GDYIZM,HJHBTQ'}
 - type: FlowPanel
@@ -78,6 +77,6 @@ components:
     layout_properties: {grid_position: 'VKXBTG,JKKRVT'}
     event_bindings: {click: link_3_click}
 - name: headline_2
-  properties: {role: headline, text: How to use the Math Chat}
+  properties: {role: headline, text: Instructions}
   type: Label
   layout_properties: {slot: title}
