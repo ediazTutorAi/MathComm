@@ -10,7 +10,7 @@ components:
   components:
   - name: rich_text_1
     properties:
-      content: "- This **Math Discussion Board** is designed for communicating with your instructor about mathematical questions from your \nCourse. This chat is not private and is not affiliated with the University of Texas at Arlington; use it as you would during office hours. Do not expect immediate replies from your instructor. It is not meant to be used by devices with small screens, like smartphones. \n\n- To enter mathematical expressions, use simple key combinations in your keyboard. The **backslash (\\\\)** is used to activate many functions, like integrals and summations, square roots, etc. Try typing the following symbols and words into the light blue box below, click on it to activate it.\n\n||\\sum SPACE k=1 ARROW-UP  \\infty SPACE ARROW-RIGHT  1/k^2||\n|---|---|---|\n \n\n"
+      content: "- This **Math Discussion Board** is designed for communicating with your instructor about mathematical questions from your \nCourse. This chat is not private and is not affiliated with the University of Texas at Arlington; use it as you would during office hours. Do not expect immediate replies from your instructor. It is not meant to be used by devices with small screen, like smartphones. \n\n- To enter mathematical expressions, use simple key combinations in your keyboard. The **backslash (\\\\)** is used to activate many functions, like integrals and summations, square roots, etc. Try typing the following symbols and words into the light blue box below, click on it to activate it.\n\n||\\sum SPACE k=1 ARROW-UP  \\infty SPACE ARROW-RIGHT  1/k^2||\n|---|---|---|\n \n\n"
       align: left
     type: RichText
     layout_properties: {grid_position: 'NEXVBZ,TQFKNA'}

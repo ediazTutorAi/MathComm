@@ -74,7 +74,8 @@ components:
   - name: rt_1
     properties:
       content: |
-        Summary of typing and the symbols you get
+        - Summary of typing and the symbols you get
+
         |Type|you get|Type|you get|Type| you get|
         |:---:|:---|:---:|:---|:---:|:---|
         |**\infty**|{label_4}|**\sqrt**|{label_3}|**a^b**|{label_5}|
