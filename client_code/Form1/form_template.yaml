@@ -21,17 +21,23 @@ components:
         - Try typing the following symbols and words into the light blue box below, click on it to activate it.
     type: RichText
     layout_properties: {grid_position: 'NEXVBZ,EORZVB'}
-  - name: label_1
-    properties:
-      text: |+
-        \sum SPACE k=1 ARROW-UP  \infty SPACE ARROW-RIGHT  1/k^2
+  - name: column_panel_2
+    properties: {wrap_on: mobile, col_spacing: huge}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'QVFHDA,BMVSGA'}
+    components:
+    - name: label_1
+      properties:
+        text: |+
+          \sum SPACE k=1 ARROW-UP  \infty SPACE ARROW-RIGHT  1/k^2
 
-    type: Label
-    layout_properties: {grid_position: 'CMOXHA,WQMEXU', full_width_row: false}
-  - name: label_4
-    properties: {align: left, background: '#CAF4FF'}
-    type: Label
-    layout_properties: {grid_position: 'CMOXHA,BXCNCA'}
+        align: right
+      type: Label
+      layout_properties: {grid_position: 'RMGVNU,MFJFDR'}
+    - name: label_4
+      properties: {align: right, background: '#CAF4FF'}
+      type: Label
+      layout_properties: {grid_position: 'RMGVNU,WFFRJM'}
   - name: rich_text_4
     properties: {content: '- Now click in the "Math Chat" link and start asking questions or sharing your mathematical ideas.'}
     type: RichText
