@@ -26,4 +26,5 @@ import anvil.email
 
 @anvil.server.callable
 def send_email():
-  anvil.email.send(to="esteban.diaz@uta.edu",from_address='anvil_support',subject='new messages')
+  anvil.email.send(to="esteban.diaz@uta.edu",from_address='anvil_support',subject='new chat messages')
+  pass

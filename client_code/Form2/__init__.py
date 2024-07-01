@@ -59,6 +59,7 @@ class Form2(Form2Template):
     self.linear_panel_1.clear()
     self.load_components_from_table()
     self.send.scroll_into_view(smooth=True)
+    anvil.server.call('send_email')
     pass
 
   # this function check the type of user, in this case, it assumes that if is not instructor, it is student
