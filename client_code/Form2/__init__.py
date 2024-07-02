@@ -218,6 +218,11 @@ class Form2(Form2Template):
     mathquill6=self.mq.StaticMath(anvil.js.get_dom_node(labelFrac))
     mathquill6.latex(labelFrac.text)
     self.rt_1.add_component(labelFrac,slot="label_6")
+    #Next slot
+    labelTheta=anvil.Label(text="\\theta")
+    mathquill7=self.mq.StaticMath(anvil.js.get_dom_node(labelTheta))
+    mathquill7.latex(labelTheta.text)
+    self.rt_1.add_component(labelTheta,slot="label_7")
 
     #Scrolling smooth
     self.send.scroll_into_view(smooth=True)

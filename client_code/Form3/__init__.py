@@ -46,6 +46,10 @@ class Form3(Form3Template):
     # In order for this to render properly I had to use double \\ in front of the fraction frac command
     # I didn't need to use it in other places, weird.
     mathquill_field6.latex('\\frac{}{}')
+    mathquill_field7 = self.mq.StaticMath(anvil.js.get_dom_node(self.label_14))
+    # In order for this to render properly I had to use double \\ in front of the fraction frac command
+    # I didn't need to use it in other places, weird.
+    mathquill_field7.latex('\\theta')
     
     pass
 

@@ -88,6 +88,7 @@ components:
           |:---:|:---|:---:|:---|:---:|:---|
           |**\infty**|{label_4}|**\sqrt**|{label_3}|**a^b**|{label_5}|
           |**\int**|{label_2}|**a/b**|{label_6}|**\sum**|{label_1}|
+          |**\theta**|{label_7}|
         border: solid 1px
       type: RichText
       layout_properties: {grid_position: 'ZVMNSM,IYWUAT'}
