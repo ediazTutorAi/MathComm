@@ -123,7 +123,7 @@ correct_dependency_ids: {}
 uplink_visible: true
 renamed: true
 runtime_options: {version: 2, client_version: '3', server_version: python3-full, server_spec: null}
-metadata: {}
+metadata: {title: Math Discussion Board}
 services:
 - source: /runtime/services/tables.yml
   client_config: {}
