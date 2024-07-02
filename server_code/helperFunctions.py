@@ -3,6 +3,8 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.server
+import time
+import anvil.email
 
 # This is a server module. It runs on the Anvil server,
 # rather than in the user's browser.
@@ -16,20 +18,10 @@ import anvil.server
 #   print("Hello, " + name + "!")
 #   return 42
 #
-import anvil.server
-from anvil import app_tables
 
 @anvil.server.callable
-def get_items():
-    return app_tables.chat.search()
-    
+def send_email(email):
+  anvil.email.send(to="esteban.diaz@uta.edu",from_address='anvil_support',
+                   subject='new chat messages',text=f"the message is sent from {email}")
+  pass
 
-@anvil.server.callable
-def push_update():
-    items = list(app_tables.chat.search())
-    anvil.server.publish('saved_chat_update', items)
-
-@anvil.server.callable
-def add_chat_item(component_data):
-    app_tables.chat.add_row(**component_data)
-    push_update()  # Push update after adding a new item

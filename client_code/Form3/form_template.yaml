@@ -8,46 +8,59 @@ components:
   name: content_panel
   layout_properties: {slot: default}
   components:
-  - name: label_1
-    properties: {text: 'If you type   \sum   you get:', spacing_above: large, spacing_below: large, align: right}
-    type: Label
-    layout_properties: {grid_position: 'WTCBGZ,SJLOEP'}
-  - name: label_2
-    properties: {spacing_above: large, spacing_below: large}
-    type: Label
-    layout_properties: {grid_position: 'WTCBGZ,SSASWU'}
-  - name: label_3
-    properties: {text: 'If you type   \infty   you should get:', spacing_above: large, spacing_below: large, align: right}
-    type: Label
-    layout_properties: {grid_position: 'CQHMFG,FXPSOT'}
-  - name: label_4
-    properties: {spacing_above: large, spacing_below: large}
-    type: Label
-    layout_properties: {grid_position: 'CQHMFG,UVNJYR'}
-  - name: label_5
-    properties: {text: 'If you type   \int   you should get:', align: right, spacing_above: large, spacing_below: large}
-    type: Label
-    layout_properties: {grid_position: 'TZLNLI,LMSMBM'}
-  - name: label_6
-    properties: {spacing_above: large, spacing_below: large}
-    type: Label
-    layout_properties: {grid_position: 'TZLNLI,BGZRTW'}
-  - name: label_7
-    properties: {text: 'The keyboard  ^  it is the power, so k^6 should give:', align: right, spacing_above: large, spacing_below: large}
-    type: Label
-    layout_properties: {grid_position: 'NEMKUT,FALOBF'}
-  - name: label_8
-    properties: {spacing_above: large, spacing_below: large}
-    type: Label
-    layout_properties: {grid_position: 'NEMKUT,KURDZM'}
-  - name: label_9
-    properties: {text: 'If you type \sqrt  should give you :', align: right, spacing_above: large, spacing_below: large}
-    type: Label
-    layout_properties: {grid_position: 'RDIPIE,UWMJGW'}
-  - name: label_10
-    properties: {spacing_above: large, spacing_below: large}
-    type: Label
-    layout_properties: {grid_position: 'RDIPIE,DRDXUH'}
+  - name: card_1
+    properties: {role: card}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'YDWZEU,TCOEDJ'}
+    components:
+    - name: label_1
+      properties: {text: 'If you type   \sum   you get:', spacing_above: large, spacing_below: large, align: right}
+      type: Label
+      layout_properties: {grid_position: 'PXVKGZ,BJHYNX'}
+    - name: label_2
+      properties: {spacing_above: large, spacing_below: large}
+      type: Label
+      layout_properties: {grid_position: 'PXVKGZ,PNNQKD'}
+    - name: label_5
+      properties: {text: 'If you type   \int   you should get:', align: right, spacing_above: large, spacing_below: large}
+      type: Label
+      layout_properties: {grid_position: 'PXVKGZ,XJKVOK'}
+    - name: label_6
+      properties: {spacing_above: large, spacing_below: large}
+      type: Label
+      layout_properties: {grid_position: 'PXVKGZ,CJYPPW'}
+    - name: label_3
+      properties: {text: 'If you type   \infty   you should get:', spacing_above: large, spacing_below: large, align: right}
+      type: Label
+      layout_properties: {grid_position: 'WVXONY,UWNXQW CBOPFE,MQSPIC'}
+    - name: label_9
+      properties: {text: 'If you type \sqrt  should give you :', align: right, spacing_above: large, spacing_below: large}
+      type: Label
+      layout_properties: {grid_position: 'WVXONY,UWNXQW MJDOYP,ZQMXJW'}
+    - name: label_4
+      properties: {spacing_above: large, spacing_below: large}
+      type: Label
+      layout_properties: {grid_position: 'WVXONY,DSZJWO AIKEIK,JHEOGK'}
+    - name: label_10
+      properties: {spacing_above: large, spacing_below: large}
+      type: Label
+      layout_properties: {grid_position: 'WVXONY,DSZJWO GVFMYN,CAKZMG'}
+    - name: label_7
+      properties: {text: 'The keyboard  ^  it is the power, so k^6 should give:', align: right, spacing_above: large, spacing_below: large}
+      type: Label
+      layout_properties: {grid_position: 'WVXONY,FFFHOF CMRLSK,QCKKRN'}
+    - name: label_11
+      properties: {text: If you type  / it should give you a fraction, align: right, spacing_above: large, spacing_below: large}
+      type: Label
+      layout_properties: {grid_position: 'WVXONY,FFFHOF DWCHKZ,IOYRGZ'}
+    - name: label_8
+      properties: {spacing_above: large, spacing_below: large}
+      type: Label
+      layout_properties: {grid_position: 'WVXONY,WKHMHP UCXDCC,WWPWJF'}
+    - name: label_12
+      properties: {spacing_above: large, spacing_below: large}
+      type: Label
+      layout_properties: {grid_position: 'WVXONY,WKHMHP ODBCJZ,KWJANS'}
 - type: FlowPanel
   properties: {}
   name: navbar_links
@@ -58,7 +71,7 @@ components:
   layout_properties: {slot: left-nav}
   components:
   - name: link_1
-    properties: {text: How to}
+    properties: {text: Instructions}
     type: Link
     layout_properties: {grid_position: 'PSKQZX,GZWNPK'}
     event_bindings: {click: link_1_click}

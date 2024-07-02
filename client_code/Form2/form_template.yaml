@@ -2,87 +2,130 @@ is_package: true
 container:
   type: HtmlTemplate
   properties: {html: '@theme:standard-page.html'}
+  event_bindings: {show: form_show}
 components:
 - type: FlowPanel
   properties: {}
-  name: navbar_links
   layout_properties: {slot: nav-right}
+  name: navbar_links
 - type: ColumnPanel
   properties: {role: null, col_widths: '{}', spacing_above: small, background: '', wrap_on: mobile, col_spacing: medium, foreground: '', spacing_below: small, visible: true, border: '', tooltip: ''}
-  name: column_panel_1
   layout_properties: {slot: default}
+  name: column_panel_1
   components:
   - type: ColumnPanel
     properties: {role: null, col_widths: '', spacing_above: small, background: '', wrap_on: mobile, col_spacing: medium, foreground: '', spacing_below: small, visible: true, border: '', tooltip: ''}
-    name: saved_chat
     layout_properties: {grid_position: 'TMAJLA,RUWXHP', full_width_row: false, row_background: ''}
-    data_bindings: []
+    name: saved_chat
   - type: ColumnPanel
     properties: {role: null, col_widths: '{}', spacing_above: small, background: '', wrap_on: mobile, col_spacing: none, foreground: '', spacing_below: small, visible: true, border: '', tooltip: ''}
-    name: column_panel_2
     layout_properties: {grid_position: 'ZJLOMG,VKBGYM'}
+    name: column_panel_2
     components:
     - type: LinearPanel
       properties: {spacing_above: small, spacing_below: small, background: '', foreground: '', border: solid 1px, visible: true, role: null, tooltip: ''}
-      name: linear_panel_1
       layout_properties: {grid_position: 'APTOZM,XDEONE'}
+      name: linear_panel_1
       components:
       - type: TextBox
-        properties: {role: null, bold: false, align: left, placeholder: write here, spacing_above: small, background: '', type: text, underline: false, font: '', hide_text: false, foreground: '', spacing_below: small, visible: true, border: '0', italic: false, enabled: true, font_size: null, tooltip: '', text: ''}
-        name: text_box_1
+        properties: {role: null, bold: false, align: left, placeholder: write only text here. To add math click the "add math"" button. To send the question click the "send or update" button, spacing_above: small, background: '', type: text, underline: false, font: '', hide_text: false, foreground: '', spacing_below: small, visible: true, border: '0', italic: false, enabled: true, font_size: null, tooltip: '', text: ''}
         layout_properties: {grid_position: 'LQECSQ,HECAVB'}
         event_bindings: {}
-  - type: Button
-    properties: {role: null, bold: false, align: full, spacing_above: small, background: 'theme:Gray 300', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, enabled: true, font_size: null, tooltip: '', text: add math}
-    name: add_math
-    layout_properties: {grid_position: 'XVBVIE,YMPYPX'}
-    event_bindings: {click: add_math_click}
-  - type: Button
-    properties:
-      role: null
-      bold: false
-      align: full
-      spacing_above: small
-      background: theme:Gray 300
-      icon: ''
-      underline: false
-      font: ''
-      icon_align: left
-      foreground: ''
-      spacing_below: small
-      visible: true
-      border: ''
-      italic: false
-      enabled: true
-      font_size: null
-      tooltip: ''
-      text: |
-        add text
-    name: add_text
-    layout_properties: {grid_position: 'XVBVIE,UQBNAF'}
-    event_bindings: {click: add_text_click}
-  - type: Button
-    properties: {role: null, bold: false, align: full, spacing_above: small, background: 'theme:Gray 300', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, enabled: true, font_size: null, tooltip: '', text: send}
-    name: send
-    layout_properties: {grid_position: 'XVBVIE,DAXTTH'}
-    event_bindings: {click: send_click}
-- name: column_panel_3
-  properties: {}
+        name: text_box_1
+  - properties: {role: card}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'QFJUMN,CMOCYA'}
+    name: card_2
+    components:
+    - type: Button
+      properties: {role: null, bold: false, align: full, spacing_above: small, background: 'theme:Gray 300', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, enabled: true, font_size: null, tooltip: '', text: add math}
+      layout_properties: {grid_position: 'HFUQGB,RYSJOJ'}
+      event_bindings: {click: add_math_click}
+      name: add_math
+    - type: Button
+      properties:
+        role: null
+        bold: false
+        align: full
+        spacing_above: small
+        background: theme:Gray 300
+        icon: ''
+        underline: false
+        font: ''
+        icon_align: left
+        foreground: ''
+        spacing_below: small
+        visible: true
+        border: ''
+        italic: false
+        enabled: true
+        font_size: null
+        tooltip: ''
+        text: |
+          add text
+      layout_properties: {grid_position: 'HFUQGB,CNEOAI'}
+      event_bindings: {click: add_text_click}
+      name: add_text
+    - type: Button
+      properties: {role: null, bold: false, align: full, spacing_above: small, background: 'theme:Gray 300', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, enabled: true, font_size: null, tooltip: '', text: send or update}
+      layout_properties: {grid_position: 'HFUQGB,DLFKZO'}
+      event_bindings: {click: send_click, show: send_show}
+      name: send
+    - properties: {text: '* Click "Add Text" only for Text. Clic  "Add Math " only for math symbols. Click "Send or update" to send the information to your instructor.'}
+      type: Label
+      layout_properties: {grid_position: 'QYEZEH,VVFLRF'}
+      name: label_4
+  - properties: {role: card}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'YCYBIV,LEEXHR'}
+    name: card_1
+    components:
+    - properties:
+        content: |
+          - Summary of typing and the symbols you get
+
+          |Type|you get|Type|you get|Type| you get|
+          |:---:|:---|:---:|:---|:---:|:---|
+          |**\infty**|{label_4}|**\sqrt**|{label_3}|**a^b**|{label_5}|
+          |**\int**|{label_2}|**a/b**|{label_6}|**\sum**|{label_1}|
+        border: solid 1px
+      type: RichText
+      layout_properties: {grid_position: 'ZVMNSM,IYWUAT'}
+      name: rt_1
+      components:
+      - properties: {}
+        type: Label
+        layout_properties: {slot: label_1}
+        name: label_1
+      - properties: {}
+        type: Label
+        layout_properties: {slot: label_2}
+        name: label_2
+      - properties: {}
+        type: Label
+        layout_properties: {slot: label_3}
+        name: label_3
+- properties: {}
   type: ColumnPanel
   layout_properties: {slot: left-nav}
+  name: column_panel_3
   components:
-  - name: link_1
-    properties: {text: How To}
+  - properties: {text: Instructions}
     type: Link
     layout_properties: {grid_position: 'RVGUYM,HTPJMZ'}
     event_bindings: {click: link_1_click}
-  - name: link_2
-    properties: {text: Math Chat}
+    name: link_1
+  - properties: {text: Math Chat}
     type: Link
     layout_properties: {grid_position: 'GUTXQE,GMBPZK'}
     event_bindings: {click: link_2_click}
-  - name: link_3
-    properties: {text: Symbols Commands}
+    name: link_2
+  - properties: {text: Symbols Commands}
     type: Link
     layout_properties: {grid_position: 'DUBJHK,JZZPTM'}
     event_bindings: {click: link_3_click}
+    name: link_3
+- properties: {text: Math Discussion Board}
+  type: Label
+  layout_properties: {slot: title}
+  name: label_5
