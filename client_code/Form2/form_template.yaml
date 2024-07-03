@@ -28,7 +28,7 @@ components:
       name: linear_panel_1
       components:
       - type: TextBox
-        properties: {role: null, bold: false, align: left, placeholder: write only text here. To add math click the "add math"" button. To send the question click the "send or update" button, spacing_above: small, background: '', type: text, underline: false, font: '', hide_text: false, foreground: '', spacing_below: small, visible: true, border: '0', italic: false, enabled: true, font_size: null, tooltip: '', text: ''}
+        properties: {role: null, bold: false, align: left, placeholder: write the text of your question here. To add math click the "add math"" button. To send the question click "send or update" button, spacing_above: small, background: '', type: text, underline: false, font: '', hide_text: false, foreground: '', spacing_below: small, visible: true, border: '0', italic: false, enabled: true, font_size: null, tooltip: '', text: ''}
         layout_properties: {grid_position: 'LQECSQ,HECAVB'}
         event_bindings: {}
         name: text_box_1
