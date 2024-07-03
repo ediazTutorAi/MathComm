@@ -33,6 +33,9 @@ db_schema:
     - name: name
       admin_ui: {width: 200}
       type: string
+    - name: nickname
+      admin_ui: {order: -2, width: 200}
+      type: string
   chat:
     client: full
     server: full
