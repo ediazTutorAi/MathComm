@@ -58,6 +58,9 @@ db_schema:
     - name: email
       admin_ui: {width: 200, order: 5}
       type: string
+    - name: nickname
+      admin_ui: {width: 200, order: 6}
+      type: string
     title: chat
 exported_table_schema:
 - python_name: table_0
