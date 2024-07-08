@@ -164,7 +164,7 @@ class Form2(Form2Template):
 
     # going through the components
     if component_type == 'Label':
-      label = anvil.Label(text=content,font_size=12)
+      label = anvil.Label(text=content,font_size=16)
       if mathquill_content:
         # Add mathquill content as StaticMath because we don't want to edit it.
         mathquill_field = self.mq.StaticMath(anvil.js.get_dom_node(label))
@@ -173,10 +173,10 @@ class Form2(Form2Template):
       row_panel.add_component(label)
       
     elif component_type == 'TextArea':
-      text_area = anvil.Label(text=content, border='0px', font_size=12)
+      text_area = anvil.Label(text=content, border='0px', font_size=16)
       row_panel.add_component(text_area)
     elif component_type == 'TextBox':
-      text_box = anvil.Label(text=content, border='0px', font_size=12)
+      text_box = anvil.Label(text=content, border='0px', font_size=16)
       row_panel.add_component(text_box)
 
     self.saved_chat.add_component(row_panel)
