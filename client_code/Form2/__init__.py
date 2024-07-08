@@ -167,8 +167,17 @@ class Form2(Form2Template):
       label = anvil.Label(text=content,font_size=16)
       if mathquill_content:
         # Add mathquill content as StaticMath because we don't want to edit it.
-        mathquill_field = self.mq.StaticMath(anvil.js.get_dom_node(label))
-        mathquill_field.latex(mathquill_content)
+        #mathquill_field = self.mq.StaticMath(anvil.js.get_dom_node(label))
+        #mathquill_field.latex(mathquill_content)
+        math_content = ['$',mathquill_content,'$']
+        math_content_label = ' '.join(math_content)
+        label.text=math_content_label
+        anvil.js.window.renderMathInElement(anvil.js.get_dom_node(label), {
+                'delimiters': [
+                    {'left': '$$', 'right': '$$', 'display': True},
+                    {'left': '$', 'right': '$', 'display': False}
+                ]
+            })
 
       row_panel.add_component(label)
       
